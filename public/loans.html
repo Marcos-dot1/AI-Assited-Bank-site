@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simule e solicite empréstimos com as melhores taxas do mercado no NovaBanco.">
+  <title>Empréstimos — NovaBanco</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation -->
+    <nav class="page-nav">
+      <div class="container">
+        <a href="/" class="nav-logo">
+          <div class="logo-icon">N</div>
+          <span>NovaBanco</span>
+        </a>
+
+        <div class="page-nav-links">
+          <a href="/dashboard.html">Dashboard</a>
+          <a href="/loans.html" class="active">Empréstimos</a>
+        </div>
+
+        <div class="page-nav-user">
+          <span id="loanUserName"></span>
+          <button class="btn btn-sm btn-outline" style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2);" onclick="logout()">Sair</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="page-main">
+      <div class="container">
+        <h1 class="page-title">Simulador de <span class="text-gradient">Empréstimo</span></h1>
+        <p class="page-subtitle">Escolha o tipo, valor e prazo. Veja os detalhes em tempo real.</p>
+
+        <div class="loan-simulator">
+          <!-- Loan form -->
+          <div class="loan-form-card">
+            <h3>Configure seu empréstimo</h3>
+
+            <!-- Loan type -->
+            <div class="loan-type-selector">
+              <div class="loan-type-option active" data-type="pessoal" id="typePessoal">
+                <div class="type-icon">💼</div>
+                <div class="type-name">Pessoal</div>
+                <div class="type-rate">1.5% a.m.</div>
+              </div>
+              <div class="loan-type-option" data-type="consignado" id="typeConsignado">
+                <div class="type-icon">🏛️</div>
+                <div class="type-name">Consignado</div>
+                <div class="type-rate">1.0% a.m.</div>
+              </div>
+            </div>
+
+            <!-- Amount slider -->
+            <div class="loan-slider-group">
+              <div class="loan-slider-header">
+                <span class="loan-slider-label">Valor do empréstimo</span>
+                <span class="loan-slider-value" id="amountValue">R$ 10.000</span>
+              </div>
+              <input type="range" class="loan-slider" id="amountSlider" min="1000" max="500000" value="10000" step="1000">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-gray-300); margin-top: 4px;">
+                <span>R$ 1.000</span>
+                <span>R$ 500.000</span>
+              </div>
+            </div>
+
+            <!-- Term slider -->
+            <div class="loan-slider-group">
+              <div class="loan-slider-header">
+                <span class="loan-slider-label">Prazo (meses)</span>
+                <span class="loan-slider-value" id="termValue">24 meses</span>
+              </div>
+              <input type="range" class="loan-slider" id="termSlider" min="6" max="60" value="24" step="1">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-gray-300); margin-top: 4px;">
+                <span>6 meses</span>
+                <span>60 meses</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Loan result -->
+          <div class="loan-result-card" id="loanResultCard">
+            <h3>Resultado da simulação</h3>
+
+            <div class="loan-result-main">
+              <div class="result-label">Parcela mensal</div>
+              <div class="result-value" id="resultMonthly">R$ 0,00</div>
+              <div class="result-suffix">por <span id="resultTermText">24</span> meses</div>
+            </div>
+
+            <div class="loan-result-details">
+              <div class="loan-result-item">
+                <div class="item-label">Valor solicitado</div>
+                <div class="item-value" id="resultAmount">R$ 10.000,00</div>
+              </div>
+              <div class="loan-result-item">
+                <div class="item-label">Taxa mensal</div>
+                <div class="item-value" id="resultRate">1.5%</div>
+              </div>
+              <div class="loan-result-item">
+                <div class="item-label">Total de juros</div>
+                <div class="item-value" id="resultInterest">R$ 0,00</div>
+              </div>
+              <div class="loan-result-item">
+                <div class="item-label">Valor total</div>
+                <div class="item-value" id="resultTotal">R$ 0,00</div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-lg loan-request-btn" id="requestLoanBtn" onclick="requestLoan()">
+              Solicitar Empréstimo
+            </button>
+            <p style="text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: var(--space-sm);" id="loginHint">
+              Faça login para solicitar
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer-disclaimer">
+      <p>🔒 <strong>Aviso Legal:</strong> O NovaBanco é uma plataforma bancária fictícia desenvolvida para demonstração. Qualquer semelhança com instituições ou serviços reais é mera coincidência.</p>
+    </footer>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="/js/loans.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gerencie suas finanças e empréstimos no painel do NovaBanco.">
+  <title>Dashboard — NovaBanco</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation -->
+    <nav class="page-nav">
+      <div class="container">
+        <a href="/" class="nav-logo">
+          <div class="logo-icon">N</div>
+          <span>NovaBanco</span>
+        </a>
+
+        <div class="page-nav-links">
+          <a href="/dashboard.html" class="active">Dashboard</a>
+          <a href="/loans.html">Empréstimos</a>
+        </div>
+
+        <div class="page-nav-user">
+          <span id="dashboardUserName">Carregando...</span>
+          <div class="user-avatar" id="dashboardUserAvatar">?</div>
+          <button class="btn btn-sm btn-outline" style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2);" onclick="logout()">Sair</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="page-main">
+      <div class="container">
+        <h1 class="page-title">Olá, <span id="dashboardGreeting">Cliente</span>! 👋</h1>
+        <p class="page-subtitle">Aqui está um resumo da sua conta.</p>
+
+        <!-- Stats cards -->
+        <div class="dashboard-grid" id="dashboardStats">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <span class="dashboard-card-label">Empréstimos Ativos</span>
+              <div class="dashboard-card-icon gold">💰</div>
+            </div>
+            <div class="dashboard-card-value" id="statActiveLoans">0</div>
+            <div class="dashboard-card-sub">empréstimos aprovados</div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <span class="dashboard-card-label">Total Solicitado</span>
+              <div class="dashboard-card-icon blue">📊</div>
+            </div>
+            <div class="dashboard-card-value" id="statTotalRequested">R$ 0</div>
+            <div class="dashboard-card-sub">em solicitações</div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <span class="dashboard-card-label">Pendentes</span>
+              <div class="dashboard-card-icon green">⏳</div>
+            </div>
+            <div class="dashboard-card-value" id="statPending">0</div>
+            <div class="dashboard-card-sub">aguardando análise</div>
+          </div>
+        </div>
+
+        <!-- Profile info -->
+        <div class="dashboard-section">
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">Seus Dados</h2>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <tbody id="profileTable">
+                <tr><td>Carregando...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Loans table -->
+        <div class="dashboard-section">
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">Meus Empréstimos</h2>
+            <a href="/loans.html" class="btn btn-primary btn-sm">Novo Empréstimo</a>
+          </div>
+          <div class="data-table-wrapper">
+            <div id="loansTableContainer">
+              <div class="empty-state">
+                <div class="empty-state-icon">💰</div>
+                <h3>Nenhum empréstimo ainda</h3>
+                <p>Simule e solicite seu primeiro empréstimo!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support Messages table -->
+        <div class="dashboard-section">
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">Minhas Mensagens e Respostas do Suporte</h2>
+            <a href="/#contato" class="btn btn-outline btn-sm">Nova Mensagem</a>
+          </div>
+          <div class="data-table-wrapper">
+            <div id="contactsTableContainer">
+              <div class="empty-state">
+                <div class="empty-state-icon">📩</div>
+                <h3>Nenhuma mensagem enviada</h3>
+                <p>Caso tenha dúvidas ou solicitações, envie pelo formulário de contato.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer-disclaimer">
+      <p>🔒 <strong>Aviso Legal:</strong> O NovaBanco é uma plataforma bancária fictícia desenvolvida para demonstração. Qualquer semelhança com instituições ou serviços reais é mera coincidência.</p>
+    </footer>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

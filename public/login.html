@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Faça login na sua conta NovaBanco e acesse seu painel financeiro.">
+  <title>Login — NovaBanco</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>">
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-container">
+      <a href="/" class="auth-logo">
+        <div class="logo-icon">N</div>
+        <span>NovaBanco</span>
+      </a>
+
+      <div class="auth-card">
+        <h2>Bem-vindo de volta</h2>
+        <p class="auth-subtitle">Entre na sua conta para continuar</p>
+
+        <div class="auth-error" id="loginError"></div>
+
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">E-mail</label>
+            <input type="email" id="loginEmail" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" placeholder="Sua senha" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg auth-submit" id="loginSubmitBtn">
+            Entrar
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          Não tem uma conta? <a href="/register.html">Cadastre-se grátis</a>
+        </div>
+      </div>
+
+      <div class="auth-disclaimer">
+        <p>🔒 <strong>Aviso:</strong> O NovaBanco é um projeto demonstrativo fictício. Qualquer semelhança com a realidade é mera coincidência.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
