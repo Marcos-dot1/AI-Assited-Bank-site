@@ -100,7 +100,7 @@ graph TD
 
 ---
 
-## 💻 Tecnologias Utilizadas
+# 💻 Tecnologias Utilizadas
 
 ### Backend
 - **[Node.js](https://nodejs.org/)**: Ambiente de execução JavaScript server-side.
@@ -123,7 +123,7 @@ graph TD
 
 ---
 
-## ⚡ Funcionalidades Principais
+# ⚡ Funcionalidades Principais
 
 ### 👤 1. Autenticação e Gestão de Usuários
 - Cadastro de novos clientes com validação estrita de dados (Nome, CPF único, E-mail único, Telefone e Senha).
@@ -157,7 +157,7 @@ graph TD
 
 ---
 
-## 🤖 Desenvolvimento Assistido por Inteligência Artificial (IA)
+# 🤖 Desenvolvimento Assistido por Inteligência Artificial (IA)
 
 Este projeto foi construído e refinado utilizando práticas avançadas de **Desenvolvimento Assistido por IA (AI-Assisted Development)**, onde a Inteligência Artificial atuou como um parceiro de programação (*AI Pair Programmer*) e arquiteto de software.
 
@@ -178,10 +178,6 @@ Este projeto foi construído e refinado utilizando práticas avançadas de **Des
      - Bloqueio de acessos não autorizados em rotas privadas;
      - Simulação, criação, aprovação e rejeição de empréstimos;
      - Envio e resposta de mensagens de contato.
-
-4. **Documentação e Padronização**:
-   - Estruturação de commits semânticos em português brasileiro.
-   - Geração desta documentação detalhada (`README.md`), diagramas em Mermaid e guias de inicialização rápida.
 
 ---
 
@@ -229,7 +225,7 @@ Bank-project/
 
 ---
 
-## 🚀 Instalação e Execução
+# 🚀 Instalação e Execução
 
 ### Pré-requisitos
 - [Node.js](https://nodejs.org/) versão 18.x ou superior instalada.
@@ -270,7 +266,7 @@ Bank-project/
 
 ---
 
-## 🔑 Credenciais Padrão
+# 🔑 Credenciais Padrão
 
 Ao inicializar o banco de dados pela primeira vez, uma conta administrativa padrão é criada automaticamente:
 
@@ -281,7 +277,7 @@ Ao inicializar o banco de dados pela primeira vez, uma conta administrativa padr
 
 ---
 
-## 🧪 Testes Automatizados
+# 🧪 Testes Automatizados
 
 O projeto conta com um script completo de validação de rotas e regras de negócio. Com o servidor rodando em background (ou executando o teste diretamente), execute:
 
@@ -300,6 +296,6 @@ O teste irá executar e validar em sequência:
 
 ---
 
-## 📄 Licença
+# 📄 Licença
 
 Este projeto está sob a licença [MIT](LICENSE). Sinta-se livre para estudar, modificar e utilizar o código para fins educacionais e de aprendizado.
